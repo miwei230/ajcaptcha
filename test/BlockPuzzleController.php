@@ -26,7 +26,7 @@ class BlockPuzzleController
         $error = false;
         $repCode = '0000';
         try {
-            $service->setConfig($config)->check($data['token'], $data['pointJson']);
+            $service->check($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
             $msg = $e->getMessage();
             $error = true;

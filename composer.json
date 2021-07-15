@@ -17,7 +17,8 @@
     "ext-json": "*",
     "psr/simple-cache": "^1.0"
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "license": "GPL-3.0-only",
   "autoload": {
     "psr-4": {
       "Fastknife\\": "src"

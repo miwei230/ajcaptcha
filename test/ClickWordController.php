@@ -8,9 +8,9 @@ class ClickWordController
 {
     public function get()
     {
-        $service = new ClickWordCaptchaService();
         $config = require '../src/config.php';
-        $data = $service->setConfig($config)->get();
+        $service = new ClickWordCaptchaService($config);
+        $data = $service->get();
         echo json_encode([
             'error' => false,
             'repCode' => '0000',
@@ -22,14 +22,14 @@ class ClickWordController
 
     public function check()
     {
-        $service = new ClickWordCaptchaService();
         $config = require '../src/config.php';
+        $service = new ClickWordCaptchaService($config);
         $data = $_REQUEST;
         $msg = null;
         $error = false;
         $repCode = '0000';
         try {
-            $service->setConfig($config)->check($data['token'], $data['pointJson']);
+            $service->check($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
             $msg = $e->getMessage();
             $error = true;
