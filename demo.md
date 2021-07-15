@@ -154,3 +154,5 @@ public function get(){
         ]);
     }
 ```
+
+本包后续更新 ThinkPHP、Hyperf 等框架，请持续关注 https://gitee.com/fastknife/aj-cachapt
