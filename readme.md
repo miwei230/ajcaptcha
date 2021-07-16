@@ -56,9 +56,11 @@ AJ-Captcha for php
 │
 ├─test 测试实例
 │	│
-│	├─pear.config.yml 配置文件
+│	├─thinkphp thinkphp框架测试示例
 │	│
-│	└─pear.config.json 配置文件
+│	├─laravel laravel框架测试示例
+│	│
+│	└─*.php 原生测试文件 配置文件
 └─config.php 配置参考
 
 ```
