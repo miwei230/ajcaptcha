@@ -21,7 +21,7 @@ AJ-Captcha · php
 
 #### 如何使用
 * 方法一：如果你没有使用 composer工具，你可以用 git下载这个软件包。为 apache/nginx配置的 Web站点使用最外层的目录作为根目录。接着手动引入对应的 service层文件以执行相应的操作。
-* 方式二， composer安装，输入命令` require fastknife/ajcaptchadev-master`，建议使用`https://mirrors.aliyun.com/composer`；
+* 方式二， composer安装，输入命令` require fastknife/ajcaptcha dev-master`，建议使用`https://mirrors.aliyun.com/composer`；
 * 方式三，自定义覆盖了这个包。用 git下载到本地自建目录 xxx。接下来，安装这个包的依赖项` intervention/image,ext-openssl,ext-gd, psr/simple-cache`。接着修改 composer. json配置 autoload条目中的psr4自动装入。示例：
     ```
      "autoload": {
