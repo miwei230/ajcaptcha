@@ -174,4 +174,30 @@ public function get(){
     }
 ```
 
+#### 前端请示头修改示例
+```javascript
+import axios from 'axios';
+import qs from 'qs';
+
+axios.defaults.baseURL = 'https://captcha.anji-plus.com/captcha-api';
+
+const service = axios.create({
+  timeout: 40000,
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+  },
+})
+service.interceptors.request.use(
+  config => {
+    if (config.hasOwnProperty('data')) {
+      config.data = qs.stringify(config.data)
+    }
+    return config
+  },
+  error => {
+    Promise.reject(error)
+  }
+)
+```
+
 本包后续更新 ThinkPHP、Hyperf 等框架的demo，请持续关注 https://gitee.com/fastknife/aj-cachapt
