@@ -27,9 +27,9 @@
         "psr-4": {
             "Fastknife\\": "src",
             "Installer\\": "installer"
-        },
-        "extra": {
-            "class": "Installer\\Script"
         }
+    },
+    "extra": {
+        "class": "Installer\\Script"
     }
 }
