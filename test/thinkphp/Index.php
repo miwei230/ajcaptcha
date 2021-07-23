@@ -10,7 +10,11 @@ use think\exception\HttpResponseException;
 use think\facade\Validate;
 use think\Response;
 
-
+/**
+ * 该文件位于controller目录下
+ * Class Index
+ * @package app\controller
+ */
 class Index
 {
     public function index()

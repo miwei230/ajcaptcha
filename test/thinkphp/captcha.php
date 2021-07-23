@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
-
+/**
+ * 请将该文件放置于config目录
+ */
 return [
     'font_file' => '', //自定义字体包路径， 不填使用默认值
     //文字验证码
@@ -21,14 +23,8 @@ return [
     ],
     'cache' => [
         'constructor' => function(){
-            return \Illuminate\Support\Facades\Cache::store();
-        },
-        'method' => [
-            //遵守PSR-16规范不需要设置此项目（tp6, laravel,hyperf）。如tp5就不支持（delete => rm）,
-            'get' => 'get', //获取
-            'set' => 'set', //设置
-            'delete' => 'delete',//删除
-            'has' => 'has' //key是否存在
-        ]
+            //在构造函数中传入自已的配置
+            return \think\facade\Cache::store();
+        }
     ]
 ];

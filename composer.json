@@ -1,7 +1,7 @@
 {
     "name": "fastknife/ajcaptcha",
     "description": "This is a behavior verification code PHP back-end implementation package",
-    "type": "composer-plugin",
+    "type": "library",
     "authors": [
         {
             "name": "bruce",
@@ -15,21 +15,13 @@
         "intervention/image": "^2.5",
         "ext-iconv": "*",
         "ext-json": "*",
-        "psr/simple-cache": "^1.0",
-        "composer-plugin-api": "^1.1"
+        "psr/simple-cache": "^1.0"
     },
-    "require-dev": {
-
-    },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "license": "GPL-3.0-only",
     "autoload": {
         "psr-4": {
-            "Fastknife\\": "src",
-            "Installer\\": "installer"
+            "Fastknife\\": "src"
         }
-    },
-    "extra": {
-        "class": "Installer\\Script"
     }
 }
