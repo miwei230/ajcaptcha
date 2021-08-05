@@ -25,7 +25,9 @@ class BaseData
      */
     public function getFontFile($file = '')
     {
-        return $file && is_file($file) ? $file : dirname(dirname(dirname(__DIR__))) . '/resources/fonts/WenQuanZhengHei.ttf';
+        return $file && is_file($file) ?
+            $file :
+            dirname(dirname(dirname(__DIR__))) . '/resources/fonts/WenQuanZhengHei.ttf';
     }
 
     /**

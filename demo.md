@@ -40,9 +40,11 @@ return [
 
     config.cache.constructor类型为string|array|function  使用以访问回调的方式获得缓存实例;
             laravel 配置：
-                'constructor' => [Illuminate\Support\Facades\Cache::class, 'getFacadeRoot'] 或者 [Illuminate\Cache\CacheManager::class, 'store']
+                'constructor' => [Illuminate\Support\Facades\Cache::class, 'getFacadeRoot'] 
+                或者 [Illuminate\Cache\CacheManager::class, 'store']
             tp6 配置
-                 'constructor' => [think\Facade\Cache::class, 'instance'] 或者 [think\Cache::class, 'store']
+                 'constructor' => [think\Facade\Cache::class, 'instance'] 
+                 或者 [think\Cache::class, 'store']
             hyperf 配置
              'constructor' => [Hyperf\Cache\CacheManager::class, 'getDriver'] 或者 [think\Cache::class, 'store']
         自定义：
