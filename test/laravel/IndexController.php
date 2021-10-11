@@ -22,12 +22,32 @@ class IndexController
         return $this->success($data);
     }
 
+    /**
+     * 一次验证
+     * @return array
+     */
     public function check()
     {
         try {
             $data = $this->validate();
             $service = $this->getCaptchaService();
             $service->check($data['token'], $data['pointJson']);
+        } catch (\Exception $e) {
+           return  $this->error($e->getMessage());
+        }
+        return $this->success([]);
+    }
+
+    /**
+     * 二次验证
+     * @return array
+     */
+    public function verification()
+    {
+        try {
+            $data = $this->validate();
+            $service = $this->getCaptchaService();
+            $service->verification($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
            return  $this->error($e->getMessage());
         }

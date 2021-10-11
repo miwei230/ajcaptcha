@@ -50,10 +50,15 @@ class BaseData
      */
     protected function getDefaultImage($dir, $images)
     {
-        if (empty($images)) {
-            $images = glob($dir . '*.png');
+        if(!empty($images)){
+            if(is_array($images)){
+                return $images;
+            }
+            if(is_string($images)) {
+                $dir = $images;
+            }
         }
-        return $images;
+        return  glob($dir . '*.png');
     }
 
 

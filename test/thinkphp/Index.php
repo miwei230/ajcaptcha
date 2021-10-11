@@ -28,6 +28,9 @@ class Index
         $this->success($data);
     }
 
+    /**
+     * 一次验证
+     */
     public function check()
     {
         $data = request()->post();
@@ -35,6 +38,22 @@ class Index
             $this->validate($data);
             $service = $this->getCaptchaService();
             $service->check($data['token'], $data['pointJson']);
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
+        $this->success([]);
+    }
+
+    /**
+     * 二次验证
+     */
+    public function verification()
+    {
+        $data = request()->post();
+        try {
+            $this->validate($data);
+            $service = $this->getCaptchaService();
+            $service->verification($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
             $this->error($e->getMessage());
         }
