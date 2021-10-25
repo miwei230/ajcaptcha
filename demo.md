@@ -52,7 +52,7 @@ return [
   'constructor' => [think\Facade\Cache::class, 'instance']
 ```
 
-> 无论配置写成`[think\Facade\Cache::class, 'instance']` 还是写还 `[think\Facade\Cache::class, 'store']` 目的都是为了获取缓存实例，具体情况视框架而定
+> 无论配置写成`[think\Facade\Cache::class, 'instance']` 还是写成 `[think\Facade\Cache::class, 'store']` 目的都是为了获取缓存实例，具体情况视框架而定
 
 
        
