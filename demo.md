@@ -52,8 +52,9 @@ return [
   'constructor' => [think\Facade\Cache::class, 'instance']
 ```
 
-```
 > 无论配置写成`[think\Facade\Cache::class, 'instance']` 还是写还 `[think\Facade\Cache::class, 'store']` 目的都是为了获取缓存实例，具体情况视框架而定
+
+
        
 + 灵活自定义：
 1. 如果您的需要使用类似以下命令打包配置文件（ThinkPHP,Laravel 命令）
