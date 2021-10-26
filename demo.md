@@ -64,7 +64,7 @@ return [
 ```php
     $instance = \think\facade\Cache::store();//获取缓存想实例
     //省略分部代码
-    'constructor' => unserialize($instance);
+    'constructor' => serialize($instance);
 ```
 
 因为在执行optimize打包命令时，会尝试将对象进行序列化。
