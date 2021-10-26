@@ -38,7 +38,7 @@ return [
 
 ##### 缓存配置
 
-##### config.cache.constructor类型为string|array|function 使用以访问回调的方式获得缓存实例;
+> config.cache.constructor类型为string|array|function 使用以访问回调的方式获得缓存实例;
 
 + laravel 配置：
 
@@ -80,6 +80,33 @@ return [
 ```
 
 除此之处，您传入的缓存实例应遵守psr-16规范
+
+##### 背景图与滑动图
+> 配置中的backgrounds与templates项均支持，Array, String两种格式
++ 使用Array（索引数组）格式时，表明它每一项都是一张图片。可以是本地图片路径，也可以是网络图片路径。   
+示例：
+```php
+    'backgrounds' => [
+        '/public/images/xxx.jpg',
+        'http://www.image.xx.jpg'
+    ]
+```
++ 使用String格式时，表明它是一个图片所在位置的目录   
+示例：
+```php
+    'backgrounds' => ROOT_PATH . '/resources/defaultImages/jigsaw/original/'
+```
+当配置中的backgrounds与templates项为空时，会将`/resources/defaultImages/`目录内所有图片做为默认图片。
+
+下面是社区人员一起维护的图片库，这些图片可以与本程序无缝衔接。    
+https://gitee.com/anji-plus/AJ-Captcha-Images
+
+##### 字体配置
+字体配置在水印与文字点击验证功能中使用，其配置格式化String, 指向字体库。为空时会以`/resources/fonts`下的字体文件为默认值。  
+示例：
+```php
+'font_file' => ROOT_PATH . '/resources/fonts/WenQuanZhengHei.ttf'
+```
 
 #### 获取滑动验证码
 
