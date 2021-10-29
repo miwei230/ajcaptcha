@@ -20,8 +20,8 @@ class Cache
 
     public function __construct($config)
     {
-        if (isset($config['methods'])) {
-            $this->methodMap = array_merge($this->methodMap, $config['methods']);
+        if (isset($config['method'])) {
+            $this->methodMap = array_merge($this->methodMap, $config['method']);
         }
         $this->driver = $this->getDriver($config['constructor']);
     }
