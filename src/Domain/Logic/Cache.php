@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Fastknife\Domain\Logic;
 
-use Fastknife\Exception\CacheException;
+use Fastknife\Utils\CacheUtils;
 
 class Cache
 {
@@ -23,23 +23,23 @@ class Cache
         if (isset($config['method'])) {
             $this->methodMap = array_merge($this->methodMap, $config['method']);
         }
-        $this->driver = $this->getDriver($config['constructor']);
+        $this->driver = $this->getDriver($config['constructor'], $config['options']??[]);
     }
 
-    public function getDriver($callback)
+    public function getDriver($callback, $options)
     {
         if ($callback instanceof \Closure) {
-            $result = $callback();
+            $result = $callback($options);
         } else if (is_object($callback)) {
             $result = $callback;
         } else if (is_array($callback)) {
-            $result = call_user_func($callback);
+            $result = call_user_func($callback, $options);
         } else if ($this->isSerialized($callback)) {
             $result = unserialize($callback);
         } else if (is_string($callback) && class_exists($callback)) {
-            $result = new $callback;
+            $result = new $callback($options);
         } else {
-            throw new CacheException('缓存构造配置项错误：constructor');
+            $result = new CacheUtils($options);
         }
         return $result;
     }

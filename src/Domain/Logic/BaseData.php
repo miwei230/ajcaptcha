@@ -23,11 +23,11 @@ class BaseData
      * @param string $file
      * @return string
      */
-    public function getFontFile($file = '')
+    public function getFontFile(string $file = ''): string
     {
         return $file && is_file($file) ?
             $file :
-            dirname(dirname(dirname(__DIR__))) . '/resources/fonts/WenQuanZhengHei.ttf';
+            dirname(__DIR__, 3) . '/resources/fonts/WenQuanZhengHei.ttf';
     }
 
     /**

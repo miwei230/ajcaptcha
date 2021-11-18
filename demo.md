@@ -31,11 +31,17 @@ return [
             'set' => 'set', //设置
             'delete' => 'delete',//删除
             'has' => 'has' //key是否存在
-        ]
+        ],
+        'options' => [
+        //如果您依然使用\Fastknife\Utils\CacheUtils做为您的缓存驱动，那么您可以自定义缓存配置。
+            'expire'        => 300,//缓存有效期 （默认为0 表示永久缓存）
+            'prefix'        => '', //缓存前缀
+            'path'          => '', //缓存目录
+            'serialize'     => [], //缓存序列化和反序列化方法
+        ]       
     ]
 ];
 ```
-
 ##### 缓存配置
 
 > config.cache.constructor类型为string|array|function 使用以访问回调的方式获得缓存实例;
