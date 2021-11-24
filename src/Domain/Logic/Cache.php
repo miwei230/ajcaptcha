@@ -86,25 +86,29 @@ class Cache
     public function get($key, $default = null)
     {
         $method = $this->getDriverMethod('get');
-        return $this->driver->$method($key, $default);
+        return $this->execute($method, [$key,$default]);
     }
 
     public function set($key, $value, $ttl = null)
     {
         $method = $this->getDriverMethod('set');
-        return $this->driver->$method($key, $value, $ttl);
+        return $this->execute($method, [$key, $value, $ttl]);
     }
 
     public function delete($key)
     {
         $method = $this->getDriverMethod('delete');
-        return $this->driver->$method($key);
+        return $this->execute($method, [$key]);
     }
 
     public function has($key)
     {
         $method = $this->getDriverMethod('has');
-        return $this->driver->$method($key);
+        return $this->execute($method, [$key]);
+    }
+
+    protected function execute(string $method, array $params){
+        return $this->driver->$method(...$params);
     }
 
 }
