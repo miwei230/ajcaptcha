@@ -59,4 +59,6 @@ AJ-Captcha for php
 
 ```
 
+#### [更新日志](./changelog.md)
+
 若此软件对您有所帮助，您可以点右上角 💘Star💘支持
