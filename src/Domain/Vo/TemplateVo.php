@@ -10,14 +10,6 @@ class TemplateVo extends ImageVo
      */
     public $offset;
 
-    /**
-     * TemplateVo constructor.
-     * @param $src
-     */
-    public function __construct($src)
-    {
-        parent::__construct($src);
-    }
 
     /**
      * @return OffsetVo

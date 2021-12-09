@@ -90,12 +90,19 @@ class RandomUtils
     {
         $numbs = '0123456789';
         $chars = "abcdefghilkmnopqrstuvwxyz";
-        if ($type === 1) $chars = $numbs;
-        if ($type === 2) $chars = "a{$chars}";
-        if ($type === 3) $chars = "{$numbs}{$chars}";
-        $string = $chars[self::getRandomInt(1, strlen($chars) - 1)];
+        $maps = '';
+        if ($type === 1){
+            $maps = $numbs;
+        }
+        if ($type === 2){
+            $maps = $chars;
+        }
+        if ($type === 3){
+            $maps = "{$numbs}{$chars}";
+        }
+        $string = $maps[self::getRandomInt(1, strlen($maps) - 1)];
         while (strlen($string) < $length) {
-            $string .= $chars[self::getRandomInt(0, strlen($chars) - 1)];
+            $string .= $maps[self::getRandomInt(0, strlen($maps) - 1)];
         }
         return $string;
     }

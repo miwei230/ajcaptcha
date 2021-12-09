@@ -15,22 +15,22 @@ class BlockData extends BaseData
 
     protected $defaultBackgroundPath = '/resources/defaultImages/jigsaw/original/';
 
-    protected $offset;
+    protected $faultOffset;
 
     /**
      * @return mixed
      */
-    public function getOffset()
+    public function getFaultOffset()
     {
-        return $this->offset;
+        return $this->faultOffset;
     }
 
     /**
-     * @param mixed $offset
+     * @param mixed $faultOffset
      */
-    public function setOffset($offset): self
+    public function setFaultOffset($faultOffset): self
     {
-        $this->offset = $offset;
+        $this->faultOffset = $faultOffset;
         return $this;
     }
 
@@ -119,7 +119,7 @@ class BlockData extends BaseData
     public function check($originPoint, $targetPoint)
     {
         if (
-            abs($originPoint->x - $targetPoint->x) <= $this->offset
+            abs($originPoint->x - $targetPoint->x) <= $this->faultOffset
             && $originPoint->y == $targetPoint->y
         ) {
             return;

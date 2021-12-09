@@ -141,6 +141,6 @@ class Factory
 
     public function makeBlockData(): BlockData
     {
-        return (new BlockData())->setOffset($this->config['block_puzzle']['offset']);
+        return (new BlockData())->setFaultOffset($this->config['block_puzzle']['offset']);
     }
 }
